@@ -24,22 +24,31 @@ function addCount(productKey){
     let count = Number(countElement.textContent);
     count++;
     countElement.textContent = count;
+
+    calTotal("add",product.price);
 }
 
 
 
 function removeCount(productKey){
+
     let product = products[productKey];
     let countElement = document.getElementById(product.countId);
     let count = Number(countElement.textContent);
+
+    if(count > 1){
+        calTotal("reduce",product.price);
+    }
+
     if (count > 1) {
         count--;
         countElement.textContent = count;
     }
+
 }
 
 
-function add(productKey) {
+function addToCart(productKey) {
     let cart = document.getElementById("cart-content");
     let product = products[productKey]
 
@@ -66,6 +75,7 @@ function add(productKey) {
                 </div>
             </div> 
     `;
+    calTotal("add",product.price);
     }
     product.present = true; 
 }
@@ -73,10 +83,37 @@ function add(productKey) {
 
 function removeProduct(productKey){
     let productDiv = document.getElementById(`${productKey}`);
+    
+
     if(productDiv){
+
+        let product = products[productKey];
+
+        //To minus the total of the product
+        let productCount = document.getElementById(product.countId).textContent;
+        //console.log(productCount);
+        let productPrice = Number(product.price);
+        //console.log(productPrice);
+        let productTotal = productCount * productPrice;
+        calTotal("reduce" , productTotal);
+
+    
         productDiv.remove();
         products[productKey].present = false;
     }
+}
+
+function calTotal(action , price){
+    let total =  document.getElementById("total-price").textContent;
+    total = Number(total);
+
+    if(action === "add"){
+        total = total + (price);
+    }else if(action === "reduce"){
+        total = total - (price);
+    }
+    
+    document.getElementById("total-price").textContent = total;
 }
 
 
