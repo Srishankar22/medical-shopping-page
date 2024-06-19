@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+</head>
+
+<body>
+    
+    <div id="cart-container">
+        <img id="cart-icon" src="cart.png" alt="cart">
+    </div>
+
+    <button id="p1" onclick="add('product1')"> Product 1</button>
+    <button id="p2" onclick="add('product2')"> Product 2</button>
+   
+    <div class="cart">
+
+        <h2 class="cart-title">YOUR ORDER</h2>
+
+        <div  id = "cart-content" class="cart-content"> </div>
+
+        <hr id="main-line"> 
+
+        <div id="bottom-line">
+            <div class="total">
+                <div id="total-title" >Total</div>
+                <div id ="total-price">0</div>
+            </div>
+            <button type="button" class="btn-buy">Pay Now</button>
+        </div>
+
+        <i class='bx bx-x' id="close-cart"></i>
+
+    </div>
+
+
+    <script src="main.js"></script> 
+
+</body>
+
+</html>
