@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="feedback.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- Font Awesome CSS -->
+    <script src="feedback.js" defer></script>
+    <!-- Ensure script is loaded after DOM -->
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <img
+          src="HEALTH_VISION__1_-removebg-preview.png"
+          alt="logo"
+          id="logo"
+        />
+      </div>
+      <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="comments.html">Comments</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="Quizmain.html">Quiz</a>
+        <a href="sitemap.html">Sitemap</a>
+        <a href="StudentDetails.html">About US</a>
+      </nav>
+    </header>
+
+    <form id="feedback-form" onsubmit="return checkInput()">
+      <!-- Trigger paymentDone function on form submission -->
+      <div class="info">
+        <h1>Almost there</h1>
+        <p>Fill in the details below to complete your purchase</p>
+      </div>
+      <fieldset>
+        <h2 class="payment-details">Payment Details</h2>
+        <label for="card-number"
+          >Card Number (16 Digits)
+          <img
+            src="cross.png"
+            alt="checking"
+            class="pad2 cross"
+            id="mark2"
+            width="14"
+            height="14"
+            style="visibility: hidden" />
+          <input type="text" id="card-number" required
+        /></label>
+        <label for="card-holder"
+          >Card Holder Name
+          <img
+            src="checked.png"
+            alt="checking"
+            class="pad2 checked"
+            id="mark3"
+            width="14"
+            height="14"
+            style="visibility: hidden" /><input
+            type="text"
+            id="card-holder"
+            required
+        /></label>
+        <label for="expire"
+          >Expiry Date
+          <img
+            src="checked.png"
+            alt="checking"
+            class="pad2 checked"
+            id="mark4"
+            width="14"
+            height="14"
+            style="visibility: hidden" /><input
+            type="month"
+            id="expire"
+            required
+        /></label>
+        <label for="ccv"
+          >CCV (3 Digits)
+          <img
+            src="cross.png"
+            alt="checking"
+            class="pad2 cross"
+            id="mark5"
+            width="14"
+            height="14"
+            style="visibility: hidden" /><input type="text" id="ccv" required
+        /></label>
+      </fieldset>
+
+      <fieldset>
+        <h2 class="billing">Billing Address</h2>
+        <label for="address"
+          >Address
+          <img
+            src="checked.png"
+            alt="checking"
+            class="pad2 checked"
+            id="mark6"
+            width="14"
+            height="14"
+            style="visibility: hidden" />
+          <input type="text" id="address" required
+        /></label>
+        <label for="city"
+          >City
+          <img
+            src="checked.png"
+            alt="checking"
+            class="pad2 checked"
+            id="mark7"
+            width="14"
+            height="14"
+            style="visibility: hidden" /><input type="text" id="city" required
+        /></label>
+        <label for="country"
+          >Country
+          <img
+            src="checked.png"
+            alt="checking"
+            class="pad2 checked"
+            id="mark8"
+            width="14"
+            height="14"
+            style="visibility: hidden" /><input
+            type="text"
+            id="country"
+            required
+        /></label>
+        <label for="post-code"
+          >Post Code<img
+            src="checked.png"
+            alt="checking"
+            class="pad2 checked"
+            id="mark9"
+            width="14"
+            height="14"
+            style="visibility: hidden" />
+          <input type="text" id="post-code" required
+        /></label>
+      </fieldset>
+
+      <fieldset>
+        <h2 class="contact">Contact Details</h2>
+        <label for="first-name"
+          >First Name
+          <img
+            src="checked.png"
+            alt="checking"
+            class="pad2 checked"
+            id="mark10"
+            width="14"
+            height="14"
+            style="visibility: hidden" /><input
+            type="text"
+            id="first-name"
+            required
+        /></label>
+        <label for="last-name"
+          >Last Name
+          <img
+            src="checked.png"
+            alt="checking"
+            class="pad2 checked"
+            id="mark11"
+            width="14"
+            height="14"
+            style="visibility: hidden" /><input
+            type="text"
+            id="last-name"
+            required
+        /></label>
+        <label for="phone"
+          >Phone Number
+          <img
+            src="cross.png"
+            alt="checking"
+            class="pad2 cross"
+            id="mark12"
+            width="14"
+            height="14"
+            style="visibility: hidden" /><input type="text" id="phone"
+        /></label>
+        <label for="email"
+          >Email Address
+          <img
+            src="cross.png"
+            alt="checking"
+            class="pad2 cross"
+            id="mark13"
+            width="14"
+            height="14"
+            style="visibility: hidden" /><input type="text" id="email" required
+        /></label>
+      </fieldset>
+
+      <div class="buttons">
+        <input type="reset" value="Reset" />
+        <input type="submit" value="Proceed" />
+      </div>
+    </form>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Greeting <span class="first-name"></span></h1>
+          <button class="close">Edit</button>
+        </div>
+        <div class="modal-body">
+          <div class="summary-details">
+            <h3>CONFIRM ORDER</h3>
+
+            <div class="modal-row">
+              <div class="modal-column">
+                <label for="fname">First Name</label>
+                <span class="fname-span">FName</span>
+              </div>
+              <div class="modal-column">
+                <label for="lname">Last Name</label>
+                <span class="lname-span">LName</span>
+              </div>
+            </div>
+            <div class="modal-row">
+              <div class="modal-column">
+                <label for="mnum">Mobile Number</label>
+                <span class="mnum-span">Mobile</span>
+              </div>
+              <div class="modal-column">
+                <label for="email">Email Address</label>
+                <span class="email-span">EmailAddress</span>
+              </div>
+            </div>
+            <div class="modal-row">
+              <div class="modal-column">
+                <label for="address">Address</label>
+                <span class="address-span">Address</span>
+              </div>
+              <div class="modal-column">
+                <label for="city">City</label>
+                <span class="city-span">CityName</span>
+              </div>
+            </div>
+            <div class="modal-row">
+              <div class="modal-column">
+                <label for="country">Country</label>
+                <span class="country-span">CountryName</span>
+              </div>
+              <div class="modal-column">
+                <label for="zipcode">Post Code</label>
+                <span class="zip-span">ZipCode</span>
+              </div>
+            </div>
+            <div class="modal-row">
+              <div class="modal-column">
+                <label>Card Number</label>
+                <span id="card-num-span"></span>
+              </div>
+              <div class="modal-column">
+                <label>Card Holder Name</label>
+                <span id="card-name-span"></span>
+              </div>
+            </div>
+            <div class="modal-row">
+              <div class="modal-column">
+                <label>Expiry Date</label>
+                <span id="exp-date-span"></span>
+              </div>
+              <div class="modal-column">
+                <label>Security Code</label>
+                <span id="sec-code-span"></span>
+              </div>
+            </div>
+          </div>
+          <fieldset>
+            <h2 class="order-summary">Order Summary</h2>
+            <div class="order-details">
+              <p id="OrderRef">
+                Order Reference: <span id="order-reference">ORDER123456</span>
+              </p>
+
+              <div id="ItemSummary">
+
+              </div>
+
+              
+
+            </div>
+          </fieldset>
+
+          <div id="bottom-line">
+            <h3 id="orderTotal"></h3>
+
+            <div class="cart-buttons">
+              <button type="submit"  id="doneBtn">
+                Confirm Order
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id="doneModal" class="done-modal">
+      <img src="OrderPlaced.jpg" alt="Order Placed Image" />
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <h4>Healthy</h4>
+        <h5>Live long life with healthy</h5>
+
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fab fa-google"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>made by <a href="PageEditor.html">Saahithyaa Ganeshsarma</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

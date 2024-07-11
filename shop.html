@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,41 +7,137 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="navbar.css"> 
+    <link rel="stylesheet" href="footer.css">
 </head>
-
 <body>
-    
+    <header class="header">
+        <div>
+            <img src="HEALTH_VISION__1_-removebg-preview.png" alt="logo" id="logo">
+        </div>
+    <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="comments.html">Comments</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="Quizmain.html">Quiz</a>
+        <a href="sitemap.html">Sitemap</a>
+        <a href="StudentDetails.html">About US</a>
+    </nav>
+    </header>
     <div id="cart-container">
         <img id="cart-icon" src="cart.png" alt="cart">
     </div>
-
-    <button id="p1" onclick="addToCart('product1')"> Product 1</button>
-    <button id="p2" onclick="addToCart('product2')"> Product 2</button>
-   
     <div class="cart">
-
         <h2 class="cart-title">YOUR ORDER</h2>
-
-        <div  id = "cart-content" class="cart-content"> </div>
-
+        <div id="cart-content" class="cart-content"></div>
         <hr id="main-line"> 
-
         <div id="bottom-line">
             <div class="total">
-                <div id="total-title" >Total</div>
-                <div id ="total-price">0</div>
+                <div id="total-title">Total</div>
+                <div id="total-price-symbol">$</div>
+                <div id="total-price">0</div>
             </div>
-            <button type="button" class="btn-buy">Pay Now</button>
+            <button id="pay-now-button">Pay Now</button>
         </div>
-
         <i class='bx bx-x' id="close-cart"></i>
-
     </div>
 
-
-    <script src="main.js"></script> 
-
+    <section class="shop-container">
+        <h1 class="section-title" >SHOP PRODUCTS</h1>
+        <div class="shop-content">
+            <div class="product-box" data-key="product1" id="product1">
+                <img src="product1.jpeg" alt="Organic Protein" class="product">
+                <h2 class="product-title">Organic Protein</h2>
+                <span class="price">$40</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product1')">
+            </div>
+            <div class="product-box" data-key="product2" id="product2">
+                <img src="product2.jpeg" alt="Fitness Tracker" class="product">
+                <h2 class="product-title">Fitness Tracker</h2>
+                <span class="price">$50</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product2')">
+            </div>
+            <div class="product-box" data-key="product3" id="product3">
+                <img src="thermo.jpg" alt="Thermometer" class="product">
+                <h2 class="product-title">Thermometer</h2>
+                <span class="price">$25</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product3')">
+            </div>
+            <div class="product-box" data-key="product4" id="product4">
+                <img src="tulsi.jpg" alt="Herby Tulsy Product" class="product">
+                <h2 class="product-title">Herby Tulsy Product</h2>
+                <span class="price">$60</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product4')">
+            </div>
+            <div class="product-box" data-key="product5" id="product5">
+                <img src="yoga.jpg" alt="Yoga Mat" class="product">
+                <h2 class="product-title">Yoga Mat</h2>
+                <span class="price">$10</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product5')">
+            </div>
+            <div class="product-box" data-key="product6" id="product6">
+                <img src="body wash.avif" alt="Healthy Body Wash" class="product">
+                <h2 class="product-title">Healthy Body Wash</h2>
+                <span class="price">$20</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product6')">
+            </div>
+            <div class="product-box" data-key="product7" id="product7">
+                <img src="herby newborn oil.jpg" alt="Herby Baby Oil" class="product">
+                <h2 class="product-title">Herby Baby Oil</h2>
+                <span class="price">$50</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product7')">
+            </div>
+            <div class="product-box" data-key="product8" id="product8">
+                <img src="snack.jpg" alt="Nature Valley Snack" class="product">
+                <h2 class="product-title">Nature Valley Snack</h2>
+                <span class="price">$15</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product8')">
+            </div>
+            <div class="product-box" data-key="product9" id="product9">
+                <img src="sunscream.avif" alt="Sunscreen" class="product">
+                <h2 class="product-title">Sunscreen</h2>
+                <span class="price">$50</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product9')">
+            </div>
+            <div class="product-box" data-key="product10" id="product10">
+                <img src="aloevera gels.jpg" alt="Aloe" class="product">
+                <h2 class="product-title">Aloevera Gel</h2>
+                <span class="price">$30</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product10')">
+            </div>
+            <div class="product-box" data-key="product11" id="product11">
+                <img src="Gripe water.jpeg" alt="Gripe" class="product">
+                <h2 class="product-title">Gripe Water</h2>
+                <span class="price">$40</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product11')">
+            </div>
+            <div class="product-box" data-key="product12" id="product12">
+                <img src="moov.jpeg" alt="Moove" class="product">
+                <h2 class="product-title">Moove Spray</h2>
+                <span class="price">$5</span>
+                <input type="button" value="Add to Cart" id="buy" onclick="addToCart('product12')">
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+    <footer>
+        <div class="footer-content">
+                    
+            <h4>Healthy</h4>
+            <h5>Live long life with healthy </h5>
+                    
+            <ul class="socials">
+                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>made by <a href="PageEditor.html">Saahithyaa Ganeshsarma</a></p>
+        </div>
+    </footer>
 </body>
-
 </html>
